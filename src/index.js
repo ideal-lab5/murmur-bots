@@ -137,13 +137,15 @@ client.on('messageCreate', async message => {
             return message.reply('You must first create a wallet with !create')
 
         // todo: get recipient
+        const recipient = args[2]
         // todo: get amount
+        const amount = args[3]
 
-        let balance = new BN(100 * Math.pow(10, 12))
+        let balance = new BN(amount * Math.pow(10, 12))
         let tx = await murmurService.api
             .tx
             .balances
-            .transferKeepAlive('5ETohe6skHTgZV97b5eZBfs48V6YzEGUhv9eeH6a3Ua7UNAc', balance)
+            .transferKeepAlive(recipient, balance)
 
         murmurService.executeTransaction(tx, (result) => {
             if (result.status.isInBlock) 
