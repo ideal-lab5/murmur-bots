@@ -1,6 +1,6 @@
 import { Client, GatewayIntentBits, Partials } from 'discord.js'
 import { ApiPromise, WsProvider, Keyring } from '@polkadot/api'
-import { MurmurClient } from '../../murmur.js/dist/index.js'
+import { MurmurClient } from '@ideallabs/murmur.js'
 import { BN } from 'bn.js'
 import axios from 'axios'
 import crypto from 'crypto'
@@ -95,7 +95,13 @@ client.on('messageCreate', async message => {
     if (message.author.bot) return
 
     const args = message.content.split(' ')
-    const command = args[1].toLowerCase()
+
+    console.log(args)
+    let command = args[1]
+    
+    if (command === undefined) return
+
+    command = command.toLowerCase()
     console.log(command)
     
     if (command === '!auth') {
@@ -108,6 +114,7 @@ client.on('messageCreate', async message => {
             userSessions[message.author.id] = { authenticated: true, secret }
             message.reply('Authenticated successfully.')
         } catch (err) {
+            console.log(err)
             message.reply('Authentication failed.')
         }
     }
