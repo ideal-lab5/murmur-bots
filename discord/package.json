@@ -1,0 +1,34 @@
+{
+  "name": "murmur-discord-bot",
+  "version": "1.0.0",
+  "description": "discord bot for murmur wallets",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@ideallabs/murmur.js": "^0.1.0",
+    "@polkadot/api": "^14.0.1",
+    "axios": "^1.7.7",
+    "bn.js": "^5.2.1",
+    "crypto": "^1.0.1",
+    "discord.js": "^14.16.3",
+    "dotenv": "^16.4.5",
+    "typescript": "^5.6.3"
+  },
+  "type": "module",
+  "devDependencies": {
+    "@tsconfig/node20": "^20.1.4",
+    "lint-staged": "^15.2.10",
+    "prettier": "^3.3.3",
+    "prettier-plugin-organize-imports": "^4.1.0"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx,json,md}": [
+      "prettier --write"
+    ]
+  }
+}
