@@ -1,10 +1,11 @@
 {
-  "name": "murmur-discord-bot",
+  "name": "murmur-bots",
   "version": "1.0.0",
-  "description": "discord bot for murmur wallets",
+  "description": "Utilities for using Murmur in nodejs",
   "main": "index.js",
   "scripts": {
-    "start": "node src/index.js",
+    "discord": "node src/discord.js",
+    "twitch": "node src/twitch.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
