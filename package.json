@@ -3,13 +3,15 @@
   "version": "1.0.0",
   "description": "Utilities for using Murmur in nodejs",
   "main": "index.js",
+  "repository": "https://github.com/ideal-lab5/murmur-bots",
   "scripts": {
     "discord": "node src/discord.js",
     "twitch": "node src/twitch.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepare": "husky install"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Ideal Labs <hello@idealabs.network>",
+  "license": "Apache-2.0",
   "dependencies": {
     "@ideallabs/murmur.js": "^0.1.0",
     "@polkadot/api": "^14.0.1",
@@ -26,7 +28,8 @@
     "@tsconfig/node20": "^20.1.4",
     "lint-staged": "^15.2.10",
     "prettier": "^3.3.3",
-    "prettier-plugin-organize-imports": "^4.1.0"
+    "prettier-plugin-organize-imports": "^4.1.0",
+    "husky": "^8.0.0"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx,json,md}": [
